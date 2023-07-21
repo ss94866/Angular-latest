@@ -1,0 +1,35 @@
+<div class="home-container">
+  <mat-card class="mat-card">
+    <mat-tab-group
+      mat-stretch-tabs="false"
+      [selectedIndex]="2"
+      class="home-tab-group"
+    >
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="me-2">home</mat-icon>
+          Home
+        </ng-template>
+        <mat-card-content class="mat-card-content">Home</mat-card-content>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="me-2">supervisor_account</mat-icon>
+          Apply Leave
+        </ng-template>
+        <mat-card-content class="mat-card-content">
+          Apply Leave
+        </mat-card-content>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class="me-2">person_add</mat-icon>
+          Leave Record
+        </ng-template>
+        <mat-card-content class="mat-card-content">
+          <app-leaverecord></app-leaverecord>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

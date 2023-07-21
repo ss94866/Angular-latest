@@ -1,0 +1,20 @@
+.loginreport-container .filter-container {
+    padding: 0.7rem 0rem;
+    border: 1px solid #D2CFD5;
+}
+
+::ng-deep .loginreport-container .holiday-header {
+    background-color: green;
+    color: white;
+}
+
+::ng-deep .loginreport-container .holiday-header:hover {
+    background-color: green !important;
+    color: white;
+    /* opacity: 0.85; */
+}
+
+::ng-deep .table-filter-container .mat-mdc-text-field-wrapper{
+    min-width: 350px;
+}
+

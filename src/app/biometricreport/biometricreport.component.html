@@ -1,0 +1,24 @@
+<div class="table-filter-container">
+  <mat-divider></mat-divider>
+  <div class="d-flex align-items-center my-2">
+    <h3 class="flex-grow-1 ms-2 fs-22 font-bold mb-0">Login Report</h3>
+    <mat-form-field appearance="outline" class="flex-grow-search custom-mat-input">
+      <mat-label>Search Keywords</mat-label>
+      <input type="text" matInput id="search" (change)="globalFilter($event)" />
+    </mat-form-field>
+  </div>
+  <mat-divider></mat-divider>
+</div>
+<div class="table-container">
+  <ag-grid-angular
+    domLayout="autoHeight"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+    (gridReady)="onGridReady($event)"
+    (cellClicked)="onCellClicked($event)"
+  ></ag-grid-angular>
+</div>

@@ -1,0 +1,12 @@
+.loginreport-container .filter-container {
+    padding: 1.3rem 0rem;
+    border: 1px solid #D2CFD5;
+}
+
+.font-bold{
+    font-weight: 500;
+}
+
+.flex-grow-search{
+    flex-grow: 0.7;
+}

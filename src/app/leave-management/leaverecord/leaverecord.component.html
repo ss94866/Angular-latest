@@ -1,0 +1,30 @@
+<div class="d-flex align-items-center p-2 filter-leave-container">
+  <mat-form-field appearance="outline" class="ms-3">
+    <mat-label>Search Keywords</mat-label>
+    <input type="text" matInput id="search" />
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="ms-3">
+    <mat-label>Filter Shift</mat-label>
+    <mat-select
+      [(ngModel)]="filterShift"
+      (ngModelChange)="shiftFilterChange($event)"
+    >
+      <mat-option value="all">All Shift</mat-option>
+      <mat-option value="day">Day Shift</mat-option>
+      <mat-option value="night">Night Shift</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="table-container">
+  <ag-grid-angular
+    domLayout="autoHeight"
+    class="ag-theme-alpine"
+    [rowHeight]="44"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowData]="rowData"
+    [rowSelection]="'multiple'"
+    [animateRows]="true"
+    (gridReady)="onGridReady($event)"
+  ></ag-grid-angular>
+</div>

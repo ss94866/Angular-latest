@@ -1,0 +1,7 @@
+.home-container {
+    padding: 1rem;
+}
+
+.home-container .mat-card-content{
+    background-color: #FAF6FD !important;
+}

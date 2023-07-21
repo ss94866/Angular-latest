@@ -1,0 +1,56 @@
+<div class="loginreport-container">
+  <div class="filter-container">
+    <mat-form-field appearance="outline" class="mx-3">
+      <mat-label>Select Year</mat-label>
+      <mat-select [(ngModel)]="filterYear">
+        <mat-option value="2023">2023</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Select Month</mat-label>
+      <mat-select [(ngModel)]="filterMonth">
+        <mat-option value="may">May</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="table-filter-container">
+    <mat-tab-group mat-stretch-tabs="false">
+      <mat-tab label="May">
+        <div class="d-flex align-items-center">
+          <mat-form-field appearance="outline" class="my-2 ms-3">
+            <mat-label>Filter Shift</mat-label>
+            <mat-select [(ngModel)]="filterShift" (ngModelChange)="shiftFilterChange($event)">
+              <mat-option value="all">All Shift</mat-option>
+              <mat-option value="day">Day Shift</mat-option>
+              <mat-option value="night">Night Shift</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="my-2 ms-3">
+            <mat-label>Search Keywords</mat-label>
+            <input type="text" matInput id="search" (change)="globalFilter($event)"/>
+          </mat-form-field>
+          <button
+            class="ms-auto me-3 d-flex align-items-center btn btn-success"
+            (click)="exportToExcel()"
+          >
+            <mat-icon class="me-1">save_as</mat-icon>
+            Export to excel
+          </button>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <div class="table-container">
+    <ag-grid-angular
+      domLayout='autoHeight'
+      class="ag-theme-alpine"
+      [columnDefs]="columnDefs"
+      [defaultColDef]="defaultColDef"
+      [rowData]="rowData" 
+      [rowSelection]="'multiple'"
+      [animateRows]="true"
+      (gridReady)="onGridReady($event)"
+      (cellClicked)="onCellClicked($event)"
+    ></ag-grid-angular>
+  </div>
+</div>
