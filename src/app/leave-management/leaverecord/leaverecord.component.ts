@@ -36,7 +36,7 @@ export class LeaverecordComponent {
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
-    this.gridApi.sizeColumnsToFit()
+    // this.gridApi.sizeColumnsToFit()
     this.rowData = this.appService
       .getLeaveData();
   }

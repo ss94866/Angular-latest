@@ -35,7 +35,7 @@ export class LoginreportComponent {
 
   onGridReady(params: GridReadyEvent) {
     this.gridApi = params.api;
-    this.gridApi.sizeColumnsToFit()
+    // this.gridApi.sizeColumnsToFit()
     this.rowData = this.appService
       .getTableData();
     this.columnDefs = this.createColumnDefs(this.rowData[0])

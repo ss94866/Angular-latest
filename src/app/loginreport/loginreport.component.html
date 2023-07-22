@@ -6,7 +6,7 @@
         <mat-option value="2023">2023</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="filter-month">
       <mat-label>Select Month</mat-label>
       <mat-select [(ngModel)]="filterMonth">
         <mat-option value="may">May</mat-option>
@@ -16,7 +16,7 @@
   <div class="table-filter-container">
     <mat-tab-group mat-stretch-tabs="false">
       <mat-tab label="May">
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center flex-wrap external-filter-container">
           <mat-form-field appearance="outline" class="my-2 ms-3">
             <mat-label>Filter Shift</mat-label>
             <mat-select [(ngModel)]="filterShift" (ngModelChange)="shiftFilterChange($event)">
@@ -30,7 +30,7 @@
             <input type="text" matInput id="search" (change)="globalFilter($event)"/>
           </mat-form-field>
           <button
-            class="ms-auto me-3 d-flex align-items-center btn btn-success"
+            class="ms-auto me-3 d-flex align-items-center btn btn-success export-btn"
             (click)="exportToExcel()"
           >
             <mat-icon class="me-1">save_as</mat-icon>

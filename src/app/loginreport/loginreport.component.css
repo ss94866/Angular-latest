@@ -14,7 +14,26 @@
     /* opacity: 0.85; */
 }
 
-::ng-deep .table-filter-container .mat-mdc-text-field-wrapper{
+::ng-deep .table-filter-container .mat-mdc-text-field-wrapper {
     min-width: 350px;
 }
 
+@media only screen and (max-width: 768px) {
+    .filter-month {
+        margin-left: 1rem;
+        margin-top: 1rem;
+    }
+
+    ::ng-deep .table-filter-container .mat-mdc-text-field-wrapper {
+        min-width: 250px;
+    }
+
+    .export-btn{
+        margin-left: 1rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .external-filter-container{
+        margin: 0.5rem 0;
+    }
+}
